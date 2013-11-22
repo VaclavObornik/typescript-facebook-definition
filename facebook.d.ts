@@ -22,7 +22,7 @@ interface IFacebookAPIMoviesResponse {
 		next:string;
 	};
 }
-;
+
 
 interface IFacebookAPIMusicListensResponseData {
 	id: string;
@@ -65,7 +65,7 @@ interface IFacebookAPIMusicListensResponseData {
 		comment_order: string; // chronological
 	};
 }
-;
+
 
 // when getting a single song by a id
 interface IFacebookAPIMusicSong {
@@ -406,6 +406,6 @@ interface IFacebook {
 		startTimer();
 		stopTimer(cb: (response: { time_delta_ms: number; }) => void );
 	};
-};
+}
 
 declare var FB: IFacebook;
