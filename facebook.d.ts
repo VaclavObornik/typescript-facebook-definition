@@ -53,15 +53,15 @@ interface IFacebookAPIMusicListensResponseData {
 		};
 	};
 	type: string; // music.listens
-	no_feed_story: bool;
+	no_feed_story: boolean;
 	likes: {
 		count: number;
-		can_like: bool;
-		user_likes: bool;
+		can_like: boolean;
+		user_likes: boolean;
 	};
 	comments: {
 		count: number;
-		can_comment: bool;
+		can_comment: boolean;
 		comment_order: string; // chronological
 	};
 }
@@ -117,7 +117,7 @@ interface IFacebookAPIMusicSong {
 		name: string;
 		url: string;
 	};
-	is_scraped: bool;
+	is_scraped: boolean;
 }
 
 // api(/me/music.listens)
@@ -181,7 +181,7 @@ interface IFacebookAPIUserResponse {
 		name: string;
 	}[];
 
-	verified: bool;
+	verified: boolean;
 	updated_time: string;
 }
 
@@ -227,16 +227,16 @@ interface IFacebookInitParameters {
 	appId?: string;	// default null	
 
 	// true to enable cookie support.
-	cookie?:bool; // default false			
+	cookie?:boolean; // default false
 
 	// false to disable logging.
-	logging?: bool;	// default true			
+	logging?: boolean;	// default true
 	
 	// true to fetch fresh status.
-	status?: bool; // default true
+	status?: boolean; // default true
 	
 	// true to parse XFBML tags.
-	xfbml?: bool; // default false
+	xfbml?: boolean; // default false
 	
 	// Specifies the URL of a custom URL channel file. This file must contain a single 
 	// script element pointing to the JavaScript SDK URL.
@@ -254,7 +254,7 @@ interface IFacebookInitParameters {
 	 * 
 	 * @see http://developers.facebook.com/docs/reference/dialogs/requests/#frictionless_requests
 	 */
-	frictionlessRequests?: bool; // default false
+	frictionlessRequests?: boolean; // default false
 
 	/**
 	 * Developers who wish to provide a custom hide and display experience may pass a 
@@ -299,7 +299,7 @@ interface IFacebook {
 		cb?:(response:IFacebookUserAuthenticate) => void, 
 
 		// Access token of the user 
-		force?:bool
+		force?:boolean
 	):void;
 
 	getAuthResponse(cb?:(response:IFacebookAuthResponse) => void ):void;
@@ -395,7 +395,7 @@ interface IFacebook {
 		scrollTo(x: number, y: number): void;
 
 		setAutoGrow(interval:number);
-		setAutoGrow(onOrOff?:bool,interval?:number);
+		setAutoGrow(onOrOff?:boolean,interval?:number);
 
 		setDoneLoading(cb: (response: { time_delta_ms?: number; }) => void);
 
