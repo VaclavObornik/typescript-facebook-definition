@@ -293,7 +293,7 @@ interface IFacebook {
 
 	// FB.logout will log the user out of both your site and Facebook. 
 	// You will need to have a valid access token for the user in order to call the function.
-	logout(cb?:(response?:Object) => any );
+	logout(cb?:(response?:Object) => any ):void;
 
 	getLoginStatus(
 		cb?:(response:IFacebookUserAuthenticate) => void, 
@@ -319,17 +319,17 @@ interface IFacebook {
 		 * name: 'auth.authResponseChange' - fired when the authResponse changes
 		 * name: 'auth.statusChange' - fired when the status changes (see FB.getLoginStatus for additional information on what this means)
 		 */
-		subscribe ( name: string, cb: (response: IFacebookUserAuthenticate) => any );
+		subscribe ( name: string, cb: (response: IFacebookUserAuthenticate) => any ):void;
 
 		/**
 		 * name: 'auth.logout'
 		 */
-		subscribe ( name: string, cb: (response: { status: string; }) => any );
+		subscribe ( name: string, cb: (response: { status: string; }) => any ):void;
 
 		/**
 		 * name: 'xfbml.render'
 		 */
-		subscribe ( name: string, cb: () => any );
+		subscribe ( name: string, cb: () => any ):void;
 
 		/**
 		 * name: 'edge.remove'
@@ -337,21 +337,21 @@ interface IFacebook {
 		 * name: 'auth.prompt'
 		 * name: 'message.send'
 		 */
-		subscribe ( name: string, cb: (response: string ) => any );
+		subscribe ( name: string, cb: (response: string ) => any ):void;
 
 		/**
 		 * name: 'comment.remove'
 		 */
-		subscribe(name: string, cb: (response: { href: string; commendID: string; } ) => any );
+		subscribe(name: string, cb: (response: { href: string; commendID: string; } ) => any ):void;
 
 		/**
 		 * @see http://developers.facebook.com/docs/reference/javascript/FB.Event.unsubscribe/
 		 */
-		unsubscribe ( name: string, cb: (response: string ) => any );
+		unsubscribe ( name: string, cb: (response: string ) => any ):void;
 	};
 
 	XFBML: {
-		parse(dom?: Element, cb?: () => any);
+		parse(dom?: Element, cb?: () => any):void;
 	};
 
 	Canvas: {
@@ -394,17 +394,17 @@ interface IFacebook {
 
 		scrollTo(x: number, y: number): void;
 
-		setAutoGrow(interval:number);
-		setAutoGrow(onOrOff?:boolean,interval?:number);
+		setAutoGrow(interval:number):void;
+		setAutoGrow(onOrOff?:boolean,interval?:number):void;
 
-		setDoneLoading(cb: (response: { time_delta_ms?: number; }) => void);
+		setDoneLoading(cb: (response: { time_delta_ms?: number; }) => void):void;
 
-		setSize(size: { width?: number; height?: number; });
+		setSize(size: { width?: number; height?: number; }):void;
 
-		setUrlHandler(cb: (response: { path: string; }) => void );
+		setUrlHandler(cb: (response: { path: string; }) => void ):void;
 		
-		startTimer();
-		stopTimer(cb: (response: { time_delta_ms: number; }) => void );
+		startTimer():void;
+		stopTimer(cb: (response: { time_delta_ms: number; }) => void ):void;
 	};
 }
 
